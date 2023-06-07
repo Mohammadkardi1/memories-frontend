@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 
-const API = axios.create({baseURL: 'http://localhost:5000'})
+const API = axios.create({baseURL: 'https://memories-api-zeta.vercel.app'})
 
 // add the following headers to each outgoing HTTP request
 API.interceptors.request.use((req) => {
