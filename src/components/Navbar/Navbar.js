@@ -38,33 +38,33 @@ const Navbar = () => {
           <div className='flex items-center space-x-2'>
             <img src={memoriesLogo} alt="icon" style={{"height": "40px"}}/>
             <img src={memoriesText} alt="icon" style={{"height": "45px"}} 
-                className='hidden md:block'/>
+                className='hidden sm:block'/>
           </div>
         </Link>
       </div>
       <div>
         { user ?  (
-          <div className='flex items-center space-x-4 text-xl'>
+          <div className='flex items-center space-x-4 text-[1rem] md:text-[1.6rem]'>
             {user?.picture  ?  
               <img 
                 src={user?.picture}
                 alt={user?.name} 
                 style={{"height": "45px"}}
-                className='rounded-full hidden md:block'
+                className='rounded-full hidden sm:block'
             />
             :
               <img 
                 src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSS9-73UZFtwlGMya7r7RPUm8N4na0r_TFLj0JUoh8j9W-2OYo&s'
                 alt={user?.name}
                 style={{"height": "45px"}}
-                className='rounded-full hidden md:block'
+                className='rounded-full hidden sm:block'
               />
             }
-            <p className='text-black hidden md:block'>
+            <p className='text-black hidden sm:block '>
               {user?.name.split(" ")[0]}
             </p>
             <button 
-              className='bg-red-600 py-2 px-4 rounded-md' 
+              className='bg-red-600 py-2 px-4 rounded-md text-[1rem] md:text-[1.3rem]' 
               onClick={logout}>
                 Logout
             </button>
@@ -72,8 +72,7 @@ const Navbar = () => {
         ) :
         (
           <Link to='/auth'>
-            <button 
-              className='bg-blue-600 py-2 px-4 rounded-md' >
+            <button className='bg-blue-600 py-2 px-4 rounded-md text-[1rem] md:text-[1.3rem]' >
               Sign In
             </button>
           </Link>

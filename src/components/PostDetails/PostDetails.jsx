@@ -41,20 +41,20 @@ const PostDetails = () => {
             <p className='text-[.8rem] md:text-[1.4rem]'>Created by: {post.creator}</p>
             <p className='text-[.8rem] md:text-[1.4rem]'>{moment(post.createdAt).fromNow()}</p>
           </div>
-          <Divider style={{ margin: '30px 0', borderWidth: '2px' }} />
         </div>
-        <div className='section'>
+        <div className='section mt-10'>
           <img 
-            className='card-media w-full min-h-[600px] rounded-[20px] object-cover' 
+            className='card-media w-full rounded-[20px] object-contain' 
             src={post.selectedFile || 'https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png'} 
             alt={post.title} />
         </div>
       </div>
 
 
+      <Divider style={{ margin: '30px 0', borderWidth: '2px' }} />
 
       <div className='section'>
-        <p className='text-[2rem] font-bold mb-6'>
+        <p className='text-[1.4rem] md:text-[2rem] font-bold mb-6'>
           You might also like:
         </p>
         <Divider />

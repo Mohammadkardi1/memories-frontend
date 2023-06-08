@@ -35,7 +35,7 @@ const Home = () => {
     <>
     <div className='grid grid-cols-4 gap-6'>
       <div className='col-span-4'>
-        <p className='text-center text-[2.5rem] mb-4'>
+        <p className='text-center text-[1.4rem] md:text-[2rem] mb-4'>
           Add your happy memories and share with us
         </p>
       </div>
