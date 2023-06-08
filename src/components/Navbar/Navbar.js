@@ -37,7 +37,8 @@ const Navbar = () => {
         <Link to='/'>
           <div className='flex items-center space-x-2'>
             <img src={memoriesLogo} alt="icon" style={{"height": "40px"}}/>
-            <img src={memoriesText} alt="icon" style={{"height": "45px"}}/>
+            <img src={memoriesText} alt="icon" style={{"height": "45px"}} 
+                className='hidden md:block'/>
           </div>
         </Link>
       </div>
@@ -49,17 +50,17 @@ const Navbar = () => {
                 src={user?.picture}
                 alt={user?.name} 
                 style={{"height": "45px"}}
-                className='rounded-full'
+                className='rounded-full hidden md:visible'
             />
             :
               <img 
                 src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSS9-73UZFtwlGMya7r7RPUm8N4na0r_TFLj0JUoh8j9W-2OYo&s'
                 alt={user?.name}
                 style={{"height": "45px"}}
-                className='rounded-full'
+                className='rounded-full hidden md:visible'
               />
             }
-            <p className='text-black'>
+            <p className='text-black hidden md:visible'>
               {user?.name.split(" ")[0]}
             </p>
             <button 

@@ -31,14 +31,15 @@ const PostDetails = () => {
 
   return (
     <div className='bg-white p-6 rounded-md shadow-xl space-y-20' >
+
       <div className=' '>
         <div className='section space-y-8'>
-          <p className='text-[3rem] font-bold'>{post.title}</p> 
-          <p className='text-gray-500 text-[1.4rem]' >{post.tags?.map((tag) => `#${tag} `)}</p>
-          <p className='text-[1.6rem]'>{post.message}</p>
+          <p className='text-[1.4rem] md:text-[2rem] font-bold'>{post.title}</p> 
+          <p className='text-gray-500 text-[.8rem] md:text-[1.4rem]' >{post.tags?.map((tag) => `#${tag} `)}</p>
+          <p className='text-[1rem] md:text-[1.6rem]'>{post.message}</p>
           <div>
-            <p className='text-[1.2rem]'>Created by: {post.creator}</p>
-            <p className='text-[1.2rem]'>{moment(post.createdAt).fromNow()}</p>
+            <p className='text-[.8rem] md:text-[1.4rem]'>Created by: {post.creator}</p>
+            <p className='text-[.8rem] md:text-[1.4rem]'>{moment(post.createdAt).fromNow()}</p>
           </div>
           <Divider style={{ margin: '30px 0', borderWidth: '2px' }} />
         </div>
@@ -49,19 +50,22 @@ const PostDetails = () => {
             alt={post.title} />
         </div>
       </div>
-      {recommendedPosts?.length && (
-        <div className='section'>
-          <p className='text-[2rem] font-bold mb-6'>
-            You might also like:
-          </p>
-          <Divider />
-          <div className='grid grid-cols-6 gap-4'>
-            {recommendedPosts.map((post, index) => (
-              index < 6 ? (<Post key={post._id} post={post} onClick={() => openPost(post._id)}/>) : null
-            ))}
-          </div>
-        </div>
-      )}
+
+
+
+      <div className='section'>
+        <p className='text-[2rem] font-bold mb-6'>
+          You might also like:
+        </p>
+        <Divider />
+          {recommendedPosts?.length && (
+              <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6'>
+                {recommendedPosts.map((post, index) => (
+                  index < 6 ? (<Post key={post._id} post={post} onClick={() => openPost(post._id)}/>) : null
+                ))}
+              </div>
+          )}
+      </div>
     </div>
   )
 }
