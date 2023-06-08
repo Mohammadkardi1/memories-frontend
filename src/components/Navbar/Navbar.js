@@ -50,17 +50,17 @@ const Navbar = () => {
                 src={user?.picture}
                 alt={user?.name} 
                 style={{"height": "45px"}}
-                className='rounded-full hidden md:visible'
+                className='rounded-full hidden md:block'
             />
             :
               <img 
                 src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSS9-73UZFtwlGMya7r7RPUm8N4na0r_TFLj0JUoh8j9W-2OYo&s'
                 alt={user?.name}
                 style={{"height": "45px"}}
-                className='rounded-full hidden md:visible'
+                className='rounded-full hidden md:block'
               />
             }
-            <p className='text-black hidden md:visible'>
+            <p className='text-black hidden md:block'>
               {user?.name.split(" ")[0]}
             </p>
             <button 
