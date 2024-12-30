@@ -22,6 +22,10 @@ const PostDetails = () => {
     }
   }, [id])
 
+  useEffect(() => {
+    window.scrollTo(0,0)
+  }, [])
+
   if (!post) return null
 
   const openPost = (_id) => navigate(`/posts/${_id}`)
