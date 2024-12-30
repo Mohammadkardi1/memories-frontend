@@ -36,24 +36,23 @@ const PostDetails = () => {
   return (
     <div className='bg-white p-6 rounded-md shadow-xl space-y-20' >
 
-      <div className=' '>
+      <div className=' space-y-8'>
         <div className='section space-y-8'>
           <p className='text-[1.4rem] md:text-[2rem] font-bold'>{post.title}</p> 
           <p className='text-gray-500 text-[.8rem] md:text-[1.4rem]' >{post.tags?.map((tag) => `#${tag} `)}</p>
-          <p className='text-[1rem] md:text-[1.6rem]'>{post.message}</p>
+        </div>
+        <div className='section'>
+          <img className='card-media w-full rounded-[20px] object-contain' alt={post.title} 
+            src={post.selectedFile || 'https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png'} />
+        </div>
+        <div className='section space-y-8'>
           <div>
             <p className='text-[.8rem] md:text-[1.4rem]'>Created by: {post.creator}</p>
             <p className='text-[.8rem] md:text-[1.4rem]'>{moment(post.createdAt).fromNow()}</p>
           </div>
-        </div>
-        <div className='section mt-10'>
-          <img 
-            className='card-media w-full rounded-[20px] object-contain' 
-            src={post.selectedFile || 'https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png'} 
-            alt={post.title} />
+          <p className='text-[1rem] md:text-[1.6rem]'>{post.message}</p>
         </div>
       </div>
-
 
       <Divider style={{ margin: '30px 0', borderWidth: '2px' }} />
 
